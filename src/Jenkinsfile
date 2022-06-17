@@ -10,7 +10,7 @@ pipeline {
         
         stage('Code Checkout'){
             steps {
-                 git 'https://github.com/johnsonjohn7/jenkin-maven-master'
+                 git 'https://github.com/vinodh1988/jenkins-june-maven'
 
             }
         }
@@ -30,8 +30,8 @@ pipeline {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
                 success {
-                    junit '**/src/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'src/*.jar'
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
                 }
             }
         }
